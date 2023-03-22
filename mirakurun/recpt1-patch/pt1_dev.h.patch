@@ -1,0 +1,26 @@
+diff --git a/recpt1/pt1_dev.h b/recpt1/pt1_dev.h
+index 60369c7..4703f63 100644
+--- a/recpt1/pt1_dev.h
++++ b/recpt1/pt1_dev.h
+@@ -3,6 +3,10 @@
+ #define _PT1_DEV_H_
+ 
+ char *bsdev[NUM_BSDEV] = {
++    "/dev/px4video0",
++    "/dev/px4video1",
++    "/dev/px4video4",
++    "/dev/px4video5",
+     "/dev/pt1video1",
+     "/dev/pt1video0",
+     "/dev/pt1video5",
+@@ -21,6 +25,10 @@ char *bsdev[NUM_BSDEV] = {
+     "/dev/px4video5"
+ };
+ char *isdb_t_dev[NUM_ISDB_T_DEV] = {
++    "/dev/px4video2",
++    "/dev/px4video3",
++    "/dev/px4video6",
++    "/dev/px4video7",
+     "/dev/pt1video2",
+     "/dev/pt1video3",
+     "/dev/pt1video6",

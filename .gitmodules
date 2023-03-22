@@ -1,0 +1,6 @@
+[submodule "mirakurun/recpt1"]
+	path = mirakurun/recpt1
+	url = https://github.com/stz2012/recpt1.git
+[submodule "mirakurun/libarib25"]
+	path = mirakurun/libarib25
+	url = https://github.com/stz2012/libarib25.git
