@@ -42,7 +42,7 @@ Mirakurunの `channels.yml` は自作してください
 変更した場合はエンコード周りの設定をコピペor参考にしてください
 
 ```bash
-cp epgstation/config/config.yml.sample epgstation/config/config.yml
+cp epgstation/config/config.yml.template epgstation/config/config.yml
 ```
 
 ## 起動
