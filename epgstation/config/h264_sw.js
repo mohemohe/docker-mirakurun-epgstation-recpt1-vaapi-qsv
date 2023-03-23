@@ -22,10 +22,10 @@ if (isDualMono) {
 }
 
 // input 設定
-Array.prototype.push.apply(args,['-i', input]);
+Array.prototype.push.apply(args, ['-i', input]);
 
 // メタ情報を先頭に置く
-Array.prototype.push.apply(args,['-movflags', 'faststart']);
+Array.prototype.push.apply(args, ['-movflags', 'faststart']);
 
 // 字幕データを含めたストリームをすべてマップ
 // Array.prototype.push.apply(args, ['-map', '0', '-ignore_unknown', '-max_muxing_queue_size', maxMuxingQueueSize, '-sn']);
@@ -38,7 +38,7 @@ if (videoHeight > 720) {
 Array.prototype.push.apply(args, ['-vf', videoFilter]);
 
 // その他設定
-Array.prototype.push.apply(args,[
+Array.prototype.push.apply(args, [
     '-preset', preset,
     '-aspect', '16:9',
     '-c:v', codec,
@@ -53,7 +53,7 @@ Array.prototype.push.apply(args,[
 
 let str = '';
 for (let i of args) {
-    str += ` ${ i }`
+    str += ` ${i}`
 }
 console.error(str);
 

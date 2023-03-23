@@ -51,7 +51,7 @@ encode:
       cmd: '%NODE% %ROOT%/config/h265_vaapi.js'
       suffix: .mp4
       rate: 4.0
-    - name: H.264 (old)
+    - name: H.264 (software)
       cmd: '%NODE% %ROOT%/config/h264_sw.js'
       suffix: .mp4
       rate: 4.0
@@ -79,6 +79,7 @@ stream:
                       -i pipe:0 -sn -threads 0
                       -c:v h264_vaapi -vf deinterlace_vaapi,scale_vaapi=w=-2:h=1080 -b:v 0 -qp 26
                       -c:a aac -ar 48000 -b:a 192k -ac 2
+                      -preset superfast
                       -tune fastdecode,zerolatency
                       -movflags frag_keyframe+empty_moov+faststart+default_base_moof -y -f mp4
                       pipe:1'
@@ -91,6 +92,7 @@ stream:
                       -i pipe:0 -sn -threads 0
                       -c:v h264_vaapi -vf deinterlace_vaapi,scale_vaapi=w=-2:h=720 -b:v 0 -qp 28
                       -c:a aac -ar 48000 -b:a 192k -ac 2
+                      -preset superfast
                       -tune fastdecode,zerolatency
                       -movflags frag_keyframe+empty_moov+faststart+default_base_moof -y -f mp4
                       pipe:1'
@@ -103,6 +105,7 @@ stream:
                       -i pipe:0 -sn -threads 0
                       -c:v h264_vaapi -vf deinterlace_vaapi,scale_vaapi=w=-2:h=480 -b:v 0 -qp 30
                       -c:a aac -ar 48000 -b:a 192k -ac 2
+                      -preset superfast
                       -tune fastdecode,zerolatency
                       -movflags frag_keyframe+empty_moov+faststart+default_base_moof -y -f mp4
                       pipe:1'
@@ -130,6 +133,7 @@ stream:
             #           2 -c:v libvpx-vp9 -vf yadif,scale=-2:480 -b:v 1500k -deadline realtime -speed 4 -cpu-used -8 -y -f
             #           webm pipe:1'
 
+            # うごいてない疑惑
             hls:
                 - name: 720p
                   cmd:
@@ -173,6 +177,7 @@ stream:
                       -i pipe:0 -sn -threads 0
                       -c:v h264_vaapi -vf deinterlace_vaapi,scale_vaapi=w=-2:h=720 -b:v 0 -qp 28
                       -c:a aac -ar 48000 -b:a 192k -ac 2
+                      -preset superfast
                       -tune fastdecode,zerolatency
                       -movflags frag_keyframe+empty_moov+faststart+default_base_moof -y -f mp4
                       pipe:1'
@@ -185,6 +190,7 @@ stream:
                       -i pipe:0 -sn -threads 0
                       -c:v h264_vaapi -vf deinterlace_vaapi,scale_vaapi=w=-2:h=480 -b:v 0 -qp 30
                       -c:a aac -ar 48000 -b:a 192k -ac 2
+                      -preset superfast
                       -tune fastdecode,zerolatency
                       -movflags frag_keyframe+empty_moov+faststart+default_base_moof -y -f mp4
                       pipe:1'
@@ -224,6 +230,7 @@ stream:
             #           /app/data/streamfiles/stream%streamNum%-child.m3u8'
 
         encoded:
+            # これもうごいてないっぽい
             mp4:
                 - name: 720p
                   cmd:
@@ -234,6 +241,7 @@ stream:
                       -i pipe:0 -sn -threads 0
                       -c:v h264_vaapi -vf deinterlace_vaapi,scale_vaapi=w=-2:h=720 -b:v 0 -qp 28
                       -c:a aac -ar 48000 -b:a 192k -ac 2
+                      -preset superfast
                       -tune fastdecode,zerolatency
                       -movflags frag_keyframe+empty_moov+faststart+default_base_moof -y -f mp4
                       pipe:1'
@@ -246,6 +254,7 @@ stream:
                       -i pipe:0 -sn -threads 0
                       -c:v h264_vaapi -vf deinterlace_vaapi,scale_vaapi=w=-2:h=480 -b:v 0 -qp 30
                       -c:a aac -ar 48000 -b:a 192k -ac 2
+                      -preset superfast
                       -tune fastdecode,zerolatency
                       -movflags frag_keyframe+empty_moov+faststart+default_base_moof -y -f mp4
                       pipe:1'
